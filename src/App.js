@@ -2,18 +2,31 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
+const flag= true, lessonNum = 14, text = 'lesson';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p> */}
+        <p>
+          {flag && 'first app'}
+        </p>
+        <p style={{fontSize: 36-4}}>
+          {lessonNum} {text}
+          {null}
+          {undefined}
+          {false}
+          {true}
         </p>
         <p>
-          Hello. First app React
+          Осталось уроков {44 - lessonNum}
+        </p>
+        <p>
+          {lessonNum < 30 ? 'Это только начало' : 'Еще не много'}
         </p>
         <a
           className="App-link"
