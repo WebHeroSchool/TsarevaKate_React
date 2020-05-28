@@ -1,4 +1,4 @@
-.app {
+.wrap {
   width: 400px;
   margin: 50px auto;
   padding: 20px;
@@ -7,7 +7,7 @@
   border: 1px solid #eee;
 }
 
-.app__title {
+.title {
   margin-top: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 36px;
