@@ -2,6 +2,7 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
+import Button from '@material-ui/core/Button';
 import styles from './App.module.css';
 
 const App = () => {
@@ -25,6 +26,9 @@ const App = () => {
       Список дел
     </h1>
     <InputItem />
+    <Button variant="contained" color="secondary">
+      добавить
+    </Button>
     <ItemList items={items} />
     <Footer count={3} />
   </div>);
