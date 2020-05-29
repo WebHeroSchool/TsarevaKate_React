@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = ({ count }) => (<footer>
+const Footer = ({count}) => (<footer>
   осталось дел: {count}
 </footer>);
 
