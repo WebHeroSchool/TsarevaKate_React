@@ -8,12 +8,15 @@ const App = () => {
   const items = [
     {
       value: 'Написать приложение',
+      isDone: false,
     },
     {
       value: 'завершить урок по props',
+      isDone: true,
     },
     {
       value: 'сходить в магазин',
+      isDone: true,
     },
   ];
 
