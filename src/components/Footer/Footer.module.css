@@ -1,0 +1,36 @@
+.wrap {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #b6eb7a;
+}
+
+.count {
+  /* font-size: 20px; */
+  color: #17706e;
+}
+
+.count span {
+  margin-left: 5px;
+  color: #fb7813;
+}
+
+.btn {
+  padding: 5px 7px;
+  display: block;
+  font-size: 16px;
+  color: #fb7813;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #fb7813;
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+  .btn:hover {
+    cursor: pointer;
+    color: #f7f7ee;
+    background-color: #fb7813;
+  }
+}

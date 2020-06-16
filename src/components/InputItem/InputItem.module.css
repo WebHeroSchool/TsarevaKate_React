@@ -1,0 +1,23 @@
+.wrap {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #17706e;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #f7f7ee;
+  border-radius: 0 5px 5px 0;
+  background-color: #17706e;
+  border: 1px solid #17706e;
+}

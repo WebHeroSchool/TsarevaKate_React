@@ -1,0 +1,31 @@
+.label {
+  display: inline-block;
+}
+
+.input {
+  display: none;
+}
+
+.text {
+  margin: 0 2px;
+  display: inline-block;
+  padding: 5px 7px;
+  color: #17706e;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+.input:checked + .text {
+  color: #f7f7ee;
+  background-color: #17706e;
+  border-color: #17706e;
+}
+
+@media (min-width: 992px) {
+  .text:hover{
+    cursor: pointer;
+    color: #17706e;
+    border-color: #17706e;
+    background-color: transparent;
+  }
+}
