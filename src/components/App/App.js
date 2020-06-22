@@ -4,33 +4,53 @@ import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-const App = () => {
-  const
-    items = [
+class App extends React.Component {
+  state = {
+    items: [
       {
         value: 'Написать приложение',
         isDone: false,
+        id: 1,
       },
       {
         value: 'завершить урок по props',
         isDone: true,
+        id: 2,
       },
       {
         value: 'сходить в магазин',
         isDone: true,
-      },
-    ];
+        id: 3,
+      }
+    ], 
+    count: 6,
+  };
 
-  return (<div className={styles.wrap}>
-    <h1 className={styles.title}>
-      Список дел
-    </h1>
-    <div className={styles.content}>
-      <InputItem />
-      <ItemList items={items} />
-      <Footer count={3}/>
-    </div>
-  </div>);
+  onClickDone = id => {
+    const newItemlist = this.state.items.map(item => {
+      const newItem = { ...item };
+
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
+      return newItem;
+    });
+
+    this.setState({items: newItemlist});
+  };
+
+  render() {
+    return (<div className={styles.wrap}>
+      <h1 className={styles.title}>
+        Список дел
+      </h1>
+      <div className={styles.content}>
+        <InputItem />
+        <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
+        <Footer count={this.state.count}/>
+      </div>
+    </div>);
+  }
 };
 
 export default App;
