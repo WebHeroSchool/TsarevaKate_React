@@ -5,7 +5,13 @@ import styles from './ItemList.module.css';
 const ItemList = ({items, onClickDone}) => (
   <div className={styles.wrap}>
     {items.map(item =>
-      <Item key={item.value} value={item.value} isDone={item.isDone} onClickDone={onClickDone}/>
+      <Item
+        key={item.value}
+        value={item.value}
+        isDone={item.isDone}
+        id={item.id}
+        onClickDone={onClickDone}
+      />
     )}
   </div>
 );

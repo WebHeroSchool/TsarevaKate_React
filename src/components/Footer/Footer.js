@@ -18,7 +18,7 @@ const
     },
   ],
   btnClear = (<button className={styles.btn}>Удалить сделанные</button>),
-  Footer = ({ count }) => (<footer className={styles.wrap}>
+  Footer = ({count}) => (<footer className={styles.wrap}>
     <div className={styles.count}>
       Осталось:
       <span>

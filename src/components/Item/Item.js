@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import del from './delete.svg';
 import styles from './Item.module.css';
 
-const Item = ({ value, isDone, onClickDone }) => (
+const Item = ({value, isDone, id, onClickDone}) => (
   <div className={
     classnames({
       [styles.item]: true,
@@ -11,7 +11,7 @@ const Item = ({ value, isDone, onClickDone }) => (
     })
   }>
     <label>
-      <input type="checkbox" name="itemList" onClick={() => onClickDone(isDone)}/>
+      <input type="checkbox" name="itemList" onClick={() => onClickDone(id)}/>
       <span className={styles.check}></span>
       {value}
     </label>
