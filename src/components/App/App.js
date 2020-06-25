@@ -22,7 +22,7 @@ class App extends React.Component {
         isDone: true,
         id: 3,
       }
-    ], 
+    ],
     count: 6,
   };
 
@@ -36,7 +36,18 @@ class App extends React.Component {
       return newItem;
     });
 
-    this.setState({items: newItemlist});
+    this.setState({ items: newItemlist });
+  };
+
+  onClickDelete = id => {
+    const newItemlist = this.state.items.filter(item => {
+      if (item.id !== id) {
+        const newItem = { ...item };
+        return newItem;
+      }
+    });
+    
+    this.setState({ items: newItemlist });
   };
 
   render() {
@@ -46,8 +57,8 @@ class App extends React.Component {
       </h1>
       <div className={styles.content}>
         <InputItem />
-        <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
-        <Footer count={this.state.count}/>
+        <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
+        <Footer count={this.state.count} />
       </div>
     </div>);
   }
