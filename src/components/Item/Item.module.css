@@ -1,5 +1,8 @@
 .item {
   position: relative;
+}
+
+.item label {
   display: flex;
   align-items: center;
   color: #17706e;
@@ -55,7 +58,7 @@
   }
 }
 
-.done {
+.done label {
   color: #b6eb7a;
   text-decoration: line-through;
 }

@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import del from './delete.svg';
 import styles from './Item.module.css';
 
-const Item = ({value, isDone, id, onClickDone}) => (
+const Item = ({value, isDone, id, onClickDone, onClickDelete}) => (
   <div className={
     classnames({
       [styles.item]: true,
@@ -15,7 +15,7 @@ const Item = ({value, isDone, id, onClickDone}) => (
       <span className={styles.check}></span>
       {value}
     </label>
-    <div className={styles.delete}>
+    <div className={styles.delete} onClick={()=> onClickDelete(id)}>
       <img src={del} alt="удалить"/>
     </div>
   </div>
