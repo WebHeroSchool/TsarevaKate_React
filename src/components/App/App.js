@@ -23,7 +23,7 @@ class App extends React.Component {
         id: 3,
       }
     ],
-    count: 6,
+    count: 3,
   };
 
   onClickDone = id => {
@@ -39,16 +39,19 @@ class App extends React.Component {
     this.setState({ items: newItemlist });
   };
 
-  onClickDelete = id => {
-    const newItemlist = this.state.items.filter(item => {
-      if (item.id !== id) {
-        const newItem = { ...item };
-        return newItem;
+  onClickDelete = id => this.setState(state => ({items: this.state.items.filter(item => item.id !== id)}));
+
+  onClickAdd = value => this.setState(state => ({
+    items: [
+      ...state.items,
+      {
+        value,
+        isDone: false,
+        id: state.count + 1
       }
-    });
-    
-    this.setState({ items: newItemlist });
-  };
+    ],
+    count: state.count + 1
+  }));
 
   render() {
     return (<div className={styles.wrap}>
@@ -56,7 +59,7 @@ class App extends React.Component {
         Список дел
       </h1>
       <div className={styles.content}>
-        <InputItem />
+        <InputItem onClickAdd={this.onClickAdd}/>
         <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
         <Footer count={this.state.count} />
       </div>

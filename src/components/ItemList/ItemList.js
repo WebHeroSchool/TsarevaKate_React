@@ -6,7 +6,7 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (
   <div className={styles.wrap}>
     {items.map(item =>
       <Item
-        key={item.value}
+        key={item.id}
         value={item.value}
         isDone={item.isDone}
         id={item.id}
