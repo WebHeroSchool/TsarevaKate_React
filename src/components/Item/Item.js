@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import del from './delete.svg';
 import styles from './Item.module.css';
@@ -24,5 +25,9 @@ const Item = ({value, isDone, id, onClickDone, onClickDelete}) => (
 Item.defaultProps = {
   isDone: false,
 };
+
+Item.protoTypes = {
+  isDone: PropTypes.bool.isRequired,
+}
 
 export default Item;
