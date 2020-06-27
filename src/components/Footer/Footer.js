@@ -29,4 +29,8 @@ const
     {btnClear}
   </footer>);
 
+Footer.defaultProps = {
+  count: 0,
+};
+
 export default Footer;
