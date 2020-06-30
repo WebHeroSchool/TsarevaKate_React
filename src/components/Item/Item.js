@@ -4,31 +4,14 @@ import classnames from 'classnames';
 import del from './delete.svg';
 import styles from './Item.module.css';
 
-
 class Item extends React.Component {
 
   componentDidMount() {
-    console.log('componentDidMount');
-  };
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
+    this.timerID = setInterval(() => console.log('interval'), 1000);
   };
 
   componentWillUnmount() {
-    console.log('componentWillUnmount');
-  };
-
-  componentWillMount() {
-    console.log('componentWillMount');
-  };
-
-  componentDidCatch() {
-    console.log('componentDidCatch');
-  };
-
-  getDerivedStateFromError() {
-    console.log('getDerivedStateFromError');
+    clearInterval(this.timerID);
   };
 
   render() {
