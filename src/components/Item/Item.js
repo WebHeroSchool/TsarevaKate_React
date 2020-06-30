@@ -7,7 +7,7 @@ import styles from './Item.module.css';
 class Item extends React.Component {
 
   componentDidMount() {
-    this.timerID = setInterval(() => console.log('interval'), 1000);
+    this.timerID = setInterval(() => console.log(del), 1000);
   };
 
   componentWillUnmount() {
