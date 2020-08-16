@@ -6,14 +6,6 @@ import styles from './Item.module.css';
 
 class Item extends React.Component {
 
-  componentDidMount() {
-    this.timerID = setInterval(() => console.log(del), 1000);
-  };
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  };
-
   render() {
     const { value, isDone, id, onClickDone, onClickDelete } = this.props;
 
@@ -47,6 +39,6 @@ Item.defaultProps = {
 
 Item.protoTypes = {
   isDone: PropTypes.bool.isRequired,
-}
+};
 
 export default Item;
