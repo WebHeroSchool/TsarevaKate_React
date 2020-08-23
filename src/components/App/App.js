@@ -1,81 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import ItemList from '../ItemList/ItemList';
-import InputItem from '../InputItem/InputItem';
-import Footer from '../Footer/Footer';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Todo from '../Todo/Todo';
+import About from '../About/About';
+import Contacts from '../Contacts/Contacts';
 import styles from './App.module.css';
 
 const App = () => {
-  const initialState = {
-    items: [
-      {
-        value: 'Написать приложение',
-        isDone: false,
-        id: 1,
-      },
-      {
-        value: 'завершить урок по props',
-        isDone: true,
-        id: 2,
-      },
-      {
-        value: 'сходить в магазин',
-        isDone: true,
-        id: 3,
-      }
-    ],
-    count: 3,
-  };
+  return (<Router>
+    <div className={styles.wrap}>
+      <div className={styles.sidebar}>
+        <Link to='/'>
+          <div className={styles.tab}>
+            Обо мне
+          </div>
+        </Link>
+        <Link to='/todo'>
+          <div className={styles.tab}>
+            Дела
+          </div>
+        </Link>
+        <Link to='/contacts'>
+          <div className={styles.tab}>
+            Контакты
+          </div>
+        </Link>
+      </div>
 
-  const [items, setItems] = useState(initialState.items);
-  const [count, setCount] = useState(initialState.count);
-
-  useEffect(()=> {
-    console.log('componentDidMount');
-  }, [count]);
-
-  useEffect(()=> {
-    console.log('componentDidUpdate');
-  });
-
-  const onClickDone = id => {
-    const newItemlist = items.map(item => {
-      const newItem = { ...item };
-
-      if (item.id === id) {
-        newItem.isDone = !item.isDone;
-      }
-      return newItem;
-    });
-    setItems(newItemlist);
-  };
-
-  const onClickDelete = id => {
-    setItems(items.filter(item => item.id !== id));
-    setCount(count => count - 1);
-  };
-
-  const onClickAdd = value => {
-    setItems([
-      ...items,
-      {
-        value,
-        isDone: false,
-        id: count + 1
-      }
-    ]);
-    setCount(count => count + 1);
-  };
-
-  return (<div className={styles.wrap}>
-    <h1 className={styles.title}>
-      Список дел
-      </h1>
-    <div className={styles.content}>
-      <InputItem onClickAdd={onClickAdd} />
-      <ItemList items={items} onClickDone={onClickDone} onClickDelete={onClickDelete} />
-      <Footer count={count} />
+      <div className={styles.content}>
+        <Route path='/' exact component={About} />
+        <Route path='/todo' component={Todo} />
+        <Route path='/contacts' component={Contacts} />
+      </div>
     </div>
-  </div>);
+  </Router>);
 };
 
 export default App;
