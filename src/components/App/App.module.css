@@ -10,28 +10,60 @@ img {
   max-width: 100%;
 }
 
-.wrap {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 20px;
-  /* background-color: #fff; */
-}
-
-.title {
+h1 {
   margin-bottom: 20px;
+  margin-top: 15px;
   text-align: center;
-  margin-top: 0;
   font-size: 36px;
   font-weight: 300;
   color: #17706e;
 }
 
+a {
+  text-decoration: none;
+}
+
+.wrap {
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  /* align-items: flex-start; */
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+.sidebar {
+  /* padding: 10px 0; */
+  align-self: start;
+  color: #17706e;
+  background-color: #f7f7ee;
+  box-shadow: 5px 5px 20px 0 rgba(204,204,204,0.7);
+  border-radius: 10px 0 0 10px;
+}
+
+.tab {
+  padding: 10px 30px 10px 20px;
+  color: #17706e;
+  font-weight: 700;
+  border-radius: 10px 0 0 10px;
+}
+
+.tab.active {
+  color: #f7f7ee;
+  background-color: #17706e;
+}
+
+@media (min-width: 992px) {
+  .tab:hover {
+    color: #f7f7ee;
+    background-color: #17706e;
+  }
+}
+
 .content {
   width: 600px;
+  max-height: calc(100vh - 40px);
   font-size: 16px;
   color: #17706e;
   border: 2px solid #f7f7ee;
