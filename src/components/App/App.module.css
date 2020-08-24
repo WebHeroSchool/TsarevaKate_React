@@ -43,13 +43,14 @@ a {
 }
 
 .tab {
+  display: block;
   padding: 10px 30px 10px 20px;
   color: #17706e;
   font-weight: 700;
   border-radius: 10px 0 0 10px;
 }
 
-.tab.active {
+.active {
   color: #f7f7ee;
   background-color: #17706e;
 }

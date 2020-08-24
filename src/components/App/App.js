@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Todo from '../Todo/Todo';
 import About from '../About/About';
 import Contacts from '../Contacts/Contacts';
@@ -9,21 +9,21 @@ const App = () => {
   return (<Router>
     <div className={styles.wrap}>
       <div className={styles.sidebar}>
-        <Link to='/'>
-          <div className={styles.tab}>
+        <NavLink to='/' exact 
+          activeClassName={styles.active} 
+          className={styles.tab}>
             Обо мне
-          </div>
-        </Link>
-        <Link to='/todo'>
-          <div className={styles.tab}>
+        </NavLink>
+        <NavLink to='/todo' 
+          activeClassName={styles.active} 
+          className={styles.tab}>
             Дела
-          </div>
-        </Link>
-        <Link to='/contacts'>
-          <div className={styles.tab}>
+        </NavLink>
+        <NavLink to='/contacts' 
+          activeClassName={styles.active} 
+          className={styles.tab}>
             Контакты
-          </div>
-        </Link>
+        </NavLink>
       </div>
 
       <div className={styles.content}>
